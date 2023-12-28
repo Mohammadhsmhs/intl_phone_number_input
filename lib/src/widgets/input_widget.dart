@@ -73,6 +73,7 @@ class InternationalPhoneNumberInput extends StatefulWidget {
 
   final TextStyle? textStyle;
   final TextStyle? selectorTextStyle;
+  final BoxDecoration? selectorDecoration;
   final InputBorder? inputBorder;
   final InputDecoration? inputDecoration;
   final InputDecoration? searchBoxDecoration;
@@ -115,6 +116,7 @@ class InternationalPhoneNumberInput extends StatefulWidget {
       this.locale,
       this.textStyle,
       this.selectorTextStyle,
+      this.selectorDecoration,
       this.inputBorder,
       this.inputDecoration,
       this.searchBoxDecoration,
@@ -293,6 +295,7 @@ class _InputWidgetState extends State<InternationalPhoneNumberInput> {
     if (widget.selectorConfig.setSelectorButtonAsPrefixIcon) {
       return value.copyWith(
           prefixIcon: SelectorButton(
+        selectorDecoration: widget.selectorDecoration,
         country: country,
         countries: countries,
         onCountryChanged: onCountryChanged,
@@ -400,6 +403,7 @@ class _InputWidgetView
               mainAxisSize: MainAxisSize.min,
               children: <Widget>[
                 SelectorButton(
+                  selectorDecoration: widget.selectorDecoration,
                   country: state.country,
                   countries: state.countries,
                   onCountryChanged: state.onCountryChanged,
