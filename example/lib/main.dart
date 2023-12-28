@@ -44,6 +44,8 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             InternationalPhoneNumberInput(
+              selectorDecoration:
+                  BoxDecoration(color: Colors.green, border: Border.all()),
               onInputChanged: (PhoneNumber number) {
                 print(number.phoneNumber);
               },
