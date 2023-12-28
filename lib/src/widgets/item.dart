@@ -11,17 +11,19 @@ class Item extends StatelessWidget {
   final bool withCountryNames;
   final double? leadingPadding;
   final bool trailingSpace;
+  final BoxDecoration? decoration;
 
-  const Item({
-    Key? key,
-    this.country,
-    this.showFlag,
-    this.useEmoji,
-    this.textStyle,
-    this.withCountryNames = false,
-    this.leadingPadding = 12,
-    this.trailingSpace = true,
-  }) : super(key: key);
+  const Item(
+      {Key? key,
+      this.country,
+      this.showFlag,
+      this.useEmoji,
+      this.textStyle,
+      this.withCountryNames = false,
+      this.leadingPadding = 12,
+      this.trailingSpace = true,
+      this.decoration})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -30,6 +32,7 @@ class Item extends StatelessWidget {
       dialCode = dialCode.padRight(5, "   ");
     }
     return Container(
+      decoration: decoration,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         mainAxisSize: MainAxisSize.min,
