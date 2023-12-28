@@ -10,7 +10,7 @@ class MyApp extends StatelessWidget {
 
     return MaterialApp(
       title: 'Demo',
-      themeMode: ThemeMode.dark,
+      themeMode: ThemeMode.light,
       darkTheme: darkTheme,
       theme: ThemeData(
         primarySwatch: Colors.blue,
@@ -44,8 +44,8 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             InternationalPhoneNumberInput(
-              selectorDecoration:
-                  BoxDecoration(color: Colors.green, border: Border.all()),
+              selectorDecoration: BoxDecoration(
+                  color: Colors.green, border: Border.all(width: 2)),
               onInputChanged: (PhoneNumber number) {
                 print(number.phoneNumber);
               },

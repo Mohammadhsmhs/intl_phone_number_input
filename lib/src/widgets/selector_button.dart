@@ -41,6 +41,7 @@ class SelectorButton extends StatelessWidget {
     return selectorConfig.selectorType == PhoneInputSelectorType.DROPDOWN
         ? countries.isNotEmpty && countries.length > 1
             ? Container(
+                height: 63,
                 decoration: selectorDecoration,
                 child: DropdownButtonHideUnderline(
                   child: DropdownButton<Country>(
